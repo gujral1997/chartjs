@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+  <title>My Chart.js Chart</title>
+  <link rel="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" href="/css/master.css">
+</head>
+<body>
+  <div class="container">
+    <canvas id="myChart"></canvas>
+  </div>
+  <script type="text/javascript">
+    let myChart = document.getElementById('myChart').getContext('2d');
+    let masPopChart = new Chart(myChart, {
+      type:'bar', // bar,horixontal, pie, line, dognut, radar, polarArea
+      data: {
+        labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
+        datasets: [{
+          label: 'Population',
+          data:[
+            64546,
+            64565,
+            46426,
+            46546,
+            54645
+          ],
+          // backgroundColor: 'green'
+          backgroundColor: [
+            'green',
+            'blue',
+            'orange',
+            'yellow',
+            'pink'
+          ],
+          borderWidth: 1,
+          borderColor: '#121212',
+          hoverBorderWidth: 3,
+          hoverBorderColor: 'black'
+        }]
+      },
+      options: {}
+    });
+  </script>
+</body>
+</html>
