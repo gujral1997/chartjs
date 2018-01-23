@@ -11,8 +11,14 @@
   </div>
   <script type="text/javascript">
     let myChart = document.getElementById('myChart').getContext('2d');
+
+    // Global Options
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18;
+    Chart.defaults.global.defaultFontColor = '#777';
+
     let masPopChart = new Chart(myChart, {
-      type:'bar', // bar,horixontal, pie, line, dognut, radar, polarArea
+      type:'pie', // bar,horixontal, pie, line, dognut, radar, polarArea
       data: {
         labels: ['Boston', 'Worcester', 'Springfield', 'Lowell', 'Cambridge'],
         datasets: [{
@@ -38,7 +44,31 @@
           hoverBorderColor: 'black'
         }]
       },
-      options: {}
+      options: {
+        title: {
+          display: true,
+          text: 'Larest Cities',
+          fontSize: 25
+        },
+        legend: {
+          display: true,
+          position: 'right',
+          labels: {
+            fontColor: 'black'
+          }
+        },
+        layout: {
+          padding: {
+            left: 50,
+            right: 0,
+            bottom: 0,
+            top: 0
+          }
+        },
+        tooltips: {
+        enabled: true
+        }
+      }
     });
   </script>
 </body>
